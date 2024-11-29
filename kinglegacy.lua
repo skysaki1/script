@@ -73,12 +73,17 @@ local SaveSettings = {
         ["Distance"] = 5,
     },
 }
-
+local realta = {}
+local Life = false
 local Mob = nil
 local monname = nil
 local plr = game.Players.LocalPlayer
 local IslandTable = {}
 local VirtualUser = game:GetService("VirtualUser")
+local devilfruit = require(game:GetService("ReplicatedStorage").Module.DFROBUX)
+for i,v in pairs(devilfruit) do
+    table.insert(realta,i)
+end
 local quest = require(game:GetService("ReplicatedStorage").Module.QuestManager)
 local Levelmon,RealUse,new_table,valuexxx = {},{},nil,1
 for i,v in pairs(quest) do
