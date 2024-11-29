@@ -79,7 +79,6 @@ local monname = nil
 local plr = game.Players.LocalPlayer
 local IslandTable = {}
 local VirtualUser = game:GetService("VirtualUser")
-local devilfruitx = require(game:GetService("ReplicatedStorage").Modules.DFROBUX)
 local quest = require(game:GetService("ReplicatedStorage").Modules.QuestManager)
 local Levelmon,RealUse,new_table,valuexxx = {},{},nil,1
 for i,v in pairs(quest) do
@@ -121,13 +120,6 @@ local function ReturnMonFolder()
 end
 
 -- game:GetService("Workspace").GhostMonster["Ghost Ship"].HumanoidRootPart
-local realta = {}
-local Life = false
-local devilfruit = require(game:GetService("ReplicatedStorage").Modules.DFROBUX)
-for i,v in pairs(devilfruit) do
-    table.insert(realta,i)
-end
-local real = game.Players.LocalPlayer.UserId
 
 
 local _, library = pcall(loadstring(game:HttpGet("https://raw.githubusercontent.com/TrixAde/Osmium/main/OsmiumLibrary.lua")))
