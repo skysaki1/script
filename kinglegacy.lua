@@ -79,7 +79,7 @@ local monname = nil
 local plr = game.Players.LocalPlayer
 local IslandTable = {}
 local VirtualUser = game:GetService("VirtualUser")
-local quest = require(game:GetService("ReplicatedStorage").QuestManager)
+local quest = require(game:GetService("ReplicatedStorage").Module.QuestManager)
 local Levelmon,RealUse,new_table,valuexxx = {},{},nil,1
 for i,v in pairs(quest) do
     table.insert(Levelmon, tonumber(v['Mob']:match('%d+')))
