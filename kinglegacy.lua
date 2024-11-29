@@ -80,14 +80,8 @@ local monname = nil
 local plr = game.Players.LocalPlayer
 local IslandTable = {}
 local VirtualUser = game:GetService("VirtualUser")
-local quest = require(game:GetService("ReplicatedStorage").QuestManager)
 local Levelmon,RealUse,new_table,valuexxx = {},{},nil,1
-for i,v in pairs(quest) do
-    table.insert(Levelmon, tonumber(v['Mob']:match('%d+')))
-end
-for i,v in pairs(quest) do
-    table.insert(RealUse, tonumber(v['Mob']:match('%d+')))
-end
+
 
 
 local function sort(a, b)
@@ -110,13 +104,6 @@ end
 for i,v in pairs(game:GetService("Workspace").Areas:GetChildren()) do
     if v.Name ~= "Sea of dust" then
         table.insert(IslandTable,v.Name)
-    end
-end
-local function ReturnMonFolder()
-    if game:GetService("Workspace").Monster.Mon:FindFirstChild(quest[plr.CurrentQuest.Value].Mob) then
-        return 'Mon'
-    elseif game:GetService("Workspace").Monster.Boss:FindFirstChild(quest[plr.CurrentQuest.Value].Mob) then
-        return 'Boss'
     end
 end
 
