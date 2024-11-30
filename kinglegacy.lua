@@ -74,7 +74,6 @@ local SaveSettings = {
     },
 }
 local realta = {}
-local weapondropx = {}
 local Life = false
 local Mob = nil
 local monname = nil
@@ -126,7 +125,7 @@ local Farm = Main:CreateToggle("Start Farming",false,function(value)
     
 end)
 
-local dropdown2 = Main:CreateDropdown("equip weapon",weapondropx,function(boolean)
+local weapondropx = Main:CreateDropdown("equip weapon",{"Refresh Dropdown"},function(boolean)
 	SaveSettings["Main2"]["WeaponSelect"] = boolean
 end)
 
@@ -276,7 +275,7 @@ local toggle14 = Stats:CreateToggle("melee",false,function(boolean)
     
 end)
 
-local toggle15 = STats:CreateToggle("sword",false,function(boolean)
+local toggle15 = Stats:CreateToggle("sword",false,function(boolean)
     SaveSettings["Stat"]["Sword"] = boolean
     
 end)
