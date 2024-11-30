@@ -74,6 +74,7 @@ local SaveSettings = {
     },
 }
 local realta = {}
+local weapondropx = {}
 local Life = false
 local Mob = nil
 local monname = nil
@@ -122,6 +123,24 @@ local label = Main:CreateLabel("This is main tab","beta king legacy script from 
 
 local Farm = Main:CreateToggle("Start Farming",false,function(value)
     SaveSettings["Main"]["Autofarm"] = value
+    
+end)
+
+local dropdown2 = Main:CreateDropdown("equip weapon",weapondropx,function(boolean)
+	SaveSettings["Main2"]["WeaponSelect"] = boolean
+end)
+
+local batp = Main:CreateButton("refresh weapon",function()
+	weapondropx:Clear()
+    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        if v:IsA('Tool') then
+            weapondropx:Add(v.Name)
+        end
+    end
+end)
+
+local eq = Main:CreateToggle("equip weapon",false,function(boolean)
+    SaveSettings["Main2"]["EquipItem"] = boolean
     
 end)
 
@@ -252,27 +271,27 @@ local sld = Stats:CreateSlider("Stats",0,100,function(arg)
     
 end)
 
-local toggle14 = Main:CreateToggle("melee",false,function(boolean)
+local toggle14 = Stats:CreateToggle("melee",false,function(boolean)
     SaveSettings["Stat"]["Melee"] = boolean
     
 end)
 
-local toggle15 = Main:CreateToggle("sword",false,function(boolean)
+local toggle15 = STats:CreateToggle("sword",false,function(boolean)
     SaveSettings["Stat"]["Sword"] = boolean
     
 end)
 
-local toggle16 = Main:CreateToggle("fruit",false,function(boolean)
+local toggle16 = Stats:CreateToggle("fruit",false,function(boolean)
     SaveSettings["Stat"]["PowerFruit"] = boolean
     
 end)
 
-local toggle17 = Main:CreateToggle("defense",false,function(boolean)
+local toggle17 = Stats:CreateToggle("defense",false,function(boolean)
     SaveSettings["Stat"]["Defense"] = boolean
     
 end)
 
-local time = SettingTab:Label("Server Time : N/a")
+local time = Setting:CreateLabel("Server Time : N/a")
 local function Munrock()
 	if game:GetService("Workspace").AntiTPNPC:FindFirstChild('QuestLvl' .. tostring(new_table))then
 		plr.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").AntiTPNPC:FindFirstChild('QuestLvl' .. tostring(new_table)).HumanoidRootPart.CFrame * CFrame.new(0,-6.5,0)
